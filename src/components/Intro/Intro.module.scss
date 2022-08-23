@@ -1,0 +1,121 @@
+@import "../../assets/style/vars";
+
+.intro {
+	$p: &;
+	padding: 11.01vw 0 6.29vw;
+
+	@media (max-width: $sm) {
+		padding: 109px 0 10px;
+	}
+
+	@media (max-width: $xs) {
+		padding: 64px 0 0;
+	}
+
+	&__title {
+		margin-bottom: 4.93vw;
+		padding: 0 4.2vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 64px;
+			padding: 0 24px;
+		}
+
+		@media (max-width: $xs) {
+			padding: 0 12px;
+		}
+	}
+
+	&__cards {
+		position: relative;
+	}
+
+	&__decor {
+		position: absolute;
+		z-index: 0;
+		display: block;
+		height: auto;
+
+		&_1 {
+			top: 1.47vw;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 10.54vw;
+
+			@media (max-width: $sm) {
+				top: 10px;
+				width: 94px;
+			}
+		}
+
+		&_2 {
+			top: 9.23vw;
+			right: 6.29vw;
+			width: 2.94vw;
+
+			@media (max-width: $sm) {
+				top: 213px;
+				right: 24px;
+				width: 26px;
+			}
+		}
+	}
+}
+
+.introCards {
+	&__card {
+		position: relative;
+	}
+}
+
+.rails {
+	$diff: calc((100vh - 35.66vw) / 2);
+	position: absolute;
+	z-index: 3;
+	left: 11.12vw;
+	top: 0;
+	width: 35.66vw;
+	height: calc(100% - (100vh - 35.66vw) / 2);
+	padding-top: $diff;
+	flex-shrink: 0;
+
+	&__imgWrap {
+		position: sticky;
+		top: $diff;
+		left: 0;
+		width: 35.66vw;
+		height: 35.66vw;
+		overflow: hidden;
+
+		picture {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			will-change: transform;
+			transition: transform 0.2s linear;
+
+			&:first-child {
+				z-index: 3;
+			}
+
+			&:nth-child(2) {
+				z-index: 2;
+			}
+
+			&:last-child {
+				z-index: 1;
+			}
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: 50% 50%;
+		}
+	}
+}

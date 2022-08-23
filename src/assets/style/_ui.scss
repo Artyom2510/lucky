@@ -1,0 +1,446 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	overflow: hidden;
+	-webkit-text-size-adjust: none;
+}
+
+body {
+	position: relative;
+	min-width: 16.78vw;
+	font-weight: 400;
+	font-family: "IBM", sans-serif;
+}
+
+section {
+	position: relative;
+}
+
+.root {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: calc(var(--vh, 1vh) * 100);
+	background-color: $white;
+	transition: background-color 0.2s ease-in-out;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	-webkit-text-size-adjust: none;
+
+	&::before {
+		content: "";
+		position: fixed;
+		z-index: 11;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		visibility: hidden;
+		background-color: $white;
+		transform-origin: bottom;
+		transform: scaleY(0);
+	}
+
+	&_hide {
+		&::before {
+			visibility: visible;
+			animation: hide 1.2s ease-in forwards;
+		}
+	}
+}
+
+@keyframes hide {
+	0% {
+		transform: scaleY(0);
+		transform-origin: bottom;
+	}
+
+	30% {
+		transform: scaleY(1);
+		transform-origin: bottom;
+	}
+
+	70% {
+		transform: scaleY(1);
+		transform-origin: bottom;
+	}
+
+	71% {
+		transform-origin: top;
+	}
+
+	100% {
+		transform: scaleY(0);
+		transform-origin: top;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+ul,
+ol {
+	margin: 0;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+	font-family: "NAMU", sans-serif;
+	font-weight: 600;
+}
+
+h1,
+.h1 {
+	font-size: 4.72vw;
+	line-height: 5.45vw;
+	letter-spacing: -0.025em;
+
+	@media (max-width: $sm) {
+		font-size: 36px;
+		line-height: 42px;
+	}
+}
+
+h2,
+.h2 {
+	font-size: 3.67vw;
+	line-height: 4.25vw;
+	letter-spacing: -0.025em;
+
+	@media (max-width: $sm) {
+		font-size: 36px;
+		line-height: 42px;
+	}
+}
+
+h3,
+.h3 {
+	font-size: 1.68vw;
+	line-height: 2.25vw;
+	letter-spacing: -0.02em;
+
+	@media (max-width: $sm) {
+		font-size: 24px;
+		line-height: 28px;
+	}
+}
+
+h4,
+.h4 {
+	font-size: 1.57vw;
+	line-height: 1.89vw;
+	letter-spacing: -0.025em;
+
+	@media (max-width: $sm) {
+		font-size: 20px;
+		line-height: 24px;
+	}
+}
+
+.desc {
+	font-size: 1.05vw;
+	line-height: 1.57vw;
+
+	@media (max-width: $sm) {
+		font-size: 20px;
+		line-height: 30px;
+	}
+}
+
+.desc2 {
+	font-family: "IBM", sans-serif;
+	font-size: 0.94vw;
+	line-height: 1.26vw;
+	font-weight: 400;
+
+	@media (max-width: $sm) {
+		font-size: 14px;
+		line-height: 21px;
+	}
+}
+
+.desc3 {
+	font-size: 0.73vw;
+	line-height: 0.89vw;
+}
+
+button,
+label,
+a {
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.title {
+	color: $blue;
+	text-transform: uppercase;
+	letter-spacing: -0.025em;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	padding: 0;
+	height: 58px;
+	border: none;
+	font-family: "IBM", sans-serif;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 400;
+	color: $white;
+	background-color: $red;
+
+	img {
+		display: inline-block;
+		width: 16px;
+		height: auto;
+		margin-right: 8px;
+	}
+
+	span {
+		font: inherit;
+		color: inherit;
+	}
+
+	&_lg {
+		height: 72px;
+		font-family: "NAMU", sans-serif;
+		font-size: 30px;
+		line-height: 36px;
+		font-weight: 600;
+	}
+
+	&_disabled,
+	&:disabled {
+		background-color: rgba($red, 0.5);
+		cursor: not-allowed;
+	}
+}
+
+.btn-look {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 158px;
+	height: 158px;
+	transform: scale(0.2);
+	padding: 0;
+	border: none;
+	border-radius: 50%;
+	font-family: "NAMU", sans-serif;
+	font-size: 19px;
+	line-height: 26px;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+	background-color: $red;
+	color: $white;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.2s ease, transform 0.4s ease-in-out;
+
+	@media (max-width: $md) {
+		width: 90px;
+		height: 90px;
+		transform: none;
+		visibility: visible;
+		opacity: 1;
+		font-size: 11px;
+		line-height: 15px;
+	}
+}
+
+.sect {
+	$p: &;
+
+	&__title-wrap {
+		overflow: hidden;
+
+		span,
+		h1,
+		h2 {
+			display: block;
+			opacity: 0;
+			transform: translate3d(0, 100%, 20px) skew(40deg);
+			perspective: 600px;
+		}
+	}
+
+	&_animate {
+		#{$p}__title-wrap {
+			@for $i from 1 through 10 {
+				&:nth-of-type(#{$i}) {
+					span,
+					h1,
+					h2 {
+						animation: text 0.5s calc(0.1s * #{$i - 1}) ease-in forwards;
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes text {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 100%, 20px) skew(40deg);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0) skewX(0);
+	}
+}
+
+.exit-btn {
+	display: block;
+	width: 80px;
+	height: 80px;
+	padding: 0;
+	border-radius: 50%;
+	border: 1px solid $white;
+	background-color: transparent;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		width: 30px;
+		height: 1px;
+		background-color: $white;
+		transition: background-color 0.2s ease;
+	}
+
+	&::before {
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	&::after {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+
+	&:hover {
+		&::before,
+		&::after {
+			background-color: $red;
+		}
+	}
+
+	@media (max-width: $xs) {
+		width: 48px;
+		height: 48px;
+
+		&::before,
+		&::after {
+			width: 24px;
+		}
+	}
+}
+
+.tab-btn {
+	$p: &;
+
+	&__radio {
+		display: none;
+
+		&:checked + #{$p}__label {
+			background-color: $red;
+			color: $white;
+		}
+	}
+
+	&__label {
+		display: inline-block;
+		padding: 0.84vw 1.57vw;
+		font-family: "NAMU", sans-serif;
+		font-size: 1.68vw;
+		line-height: 2.25vw;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		border: none;
+		border-radius: 50px;
+		background-color: rgba(236, 106, 85, 0.1);
+		color: $red;
+		transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+
+		@media (max-width: $sm) {
+			padding: 16px 30px;
+			font-size: 24px;
+			line-height: 32px;
+		}
+	}
+
+	&_disabled {
+		#{$p}__label {
+			pointer-events: none;
+			opacity: 0.3;
+		}
+	}
+}
+
+.form {
+	position: relative;
+
+	&__title {
+		width: calc(100% - 30px);
+		margin-bottom: 49px;
+		font-family: "NAMU", sans-serif;
+		font-size: 30px;
+		line-height: 36px;
+		font-weight: 600;
+		color: $text;
+
+		@media (max-width: $xs) {
+			font-size: 22px;
+			line-height: 26px;
+		}
+	}
+
+	&__formfields {
+		margin-bottom: 32px;
+	}
+
+	&__submit {
+		width: 100%;
+	}
+
+	&__decor {
+		position: absolute;
+		z-index: 2;
+		top: -32px;
+		left: -32px;
+		display: inline-block;
+		width: 201px;
+		height: auto;
+	}
+}
+
+.grecaptcha-badge {
+	display: none !important;
+}

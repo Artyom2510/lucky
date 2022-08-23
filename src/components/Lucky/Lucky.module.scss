@@ -1,0 +1,282 @@
+@import "../../assets/style/vars";
+
+.lucky {
+	padding: 6.71vw 0 12.95vw;
+
+	@media (max-width: $sm) {
+		padding: 100px 0 84px;
+	}
+
+	@media (max-width: $xs) {
+		padding-bottom: 100px;
+	}
+
+	&__title {
+		margin-bottom: 1.68vw;
+		padding: 0 4.2vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 40px;
+			padding: 0 24px;
+		}
+
+		@media (max-width: $xs) {
+			margin-bottom: 69px;
+			padding: 0 12px;
+		}
+	}
+
+	&__tabs {
+		margin-bottom: 2.41vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 42px;
+		}
+
+		@media (max-width: $xs) {
+			margin-bottom: 57px;
+		}
+	}
+
+	&__wrap {
+		min-height: 35.66vw;
+
+		@media (max-width: $sm) {
+			min-height: 348px;
+		}
+
+		@media (max-width: $xs) {
+			min-height: auto;
+		}
+	}
+
+	&__location {
+		position: relative;
+	}
+
+	&__decor {
+		position: absolute;
+		z-index: 0;
+		display: block;
+		height: auto;
+
+		&_1 {
+			top: 0;
+			right: 1.89vw;
+			width: 7.18vw;
+
+			@media (max-width: $sm) {
+				right: 0;
+				width: 64px;
+			}
+		}
+
+		&_2 {
+			bottom: 2px;
+			left: 4.2vw;
+			width: 7.18vw;
+		}
+
+		&_3 {
+			bottom: 46px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 10.96vw;
+
+			@media (max-width: $sm) {
+				bottom: -26px;
+				width: 94px;
+			}
+		}
+	}
+}
+
+.tabs {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 21.87vw;
+
+	@media (max-width: $sm) {
+		padding-right: 66px;
+	}
+
+	@media (max-width: $xs) {
+		justify-content: flex-start;
+		padding-right: 0;
+		padding-left: 12px;
+	}
+
+	&__divide {
+		margin: 0 0.79vw;
+		font-family: "Namu", sans-serif;
+		font-weight: 600;
+		font-size: 1.57vw;
+		line-height: 1.89vw;
+		color: $red;
+
+		@media (max-width: $sm) {
+			margin: 0 15px;
+			font-size: 20px;
+			line-height: 30px;
+		}
+	}
+}
+
+.radioTabs {
+	$p: &;
+
+	&__radio {
+		display: none;
+
+		&:checked + #{$p}__label {
+			color: $red;
+		}
+	}
+
+	&__label {
+		position: relative;
+		display: inline-block;
+		font-family: "IBM", sans-serif;
+		font-size: 1.05vw;
+		line-height: 1.57vw;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		color: $gray;
+		transition: color 0.2s ease;
+
+		@media (max-width: $sm) {
+			font-size: 20px;
+			line-height: 30px;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: transparent;
+			transition: background-color 0.2s ease;
+		}
+
+		&:hover {
+			&::after {
+				background-color: $red;
+			}
+		}
+	}
+}
+
+.location {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10.07vw;
+
+	@media (max-width: $sm) {
+		padding: 0 24px;
+	}
+
+	@media (max-width: $xs) {
+		flex-direction: column-reverse;
+		padding: 0;
+	}
+
+	&__northImg {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		display: block;
+		width: 6.19vw;
+		height: auto;
+
+		@media (max-width: $sm) {
+			top: -18px;
+			width: 78px;
+		}
+
+		@media (max-width: $xs) {
+			top: -106px;
+			right: 12px;
+			left: auto;
+			transform: translateX(0);
+		}
+	}
+
+	&__info,
+	&__img {
+		width: 35.66vw;
+		height: 35.66vw;
+		border-radius: 50%;
+		flex-shrink: 0;
+
+		@media (max-width: $sm) {
+			width: 348px;
+			height: 338px;
+		}
+	}
+
+	&__img {
+		display: block;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $violet;
+		text-align: center;
+
+		*:last-child {
+			margin-bottom: 0;
+		}
+
+		h3 {
+			margin-bottom: 0.42vw;
+			letter-spacing: -0.02em;
+			text-transform: uppercase;
+			color: $blue;
+
+			@media (max-width: $sm) {
+				margin-bottom: 4px;
+			}
+		}
+
+		p {
+			margin-bottom: 2.83vw;
+			font-size: 1.57vw;
+			line-height: 1.89vw;
+			letter-spacing: 0.005em;
+			color: rgba($violet, 0.6);
+
+			@media (max-width: $sm) {
+				margin-bottom: 20px;
+				font-size: 20px;
+				line-height: 24px;
+			}
+		}
+
+		@media (max-width: $xs) {
+			margin: 0 auto;
+		}
+	}
+
+	&__img {
+		@media (max-width: $xs) {
+			margin: 0 auto 40px;
+		}
+	}
+
+	&__map {
+		width: 100%;
+		height: 35.66vw;
+
+		@media (max-width: $sm) {
+			height: 338px;
+		}
+	}
+}

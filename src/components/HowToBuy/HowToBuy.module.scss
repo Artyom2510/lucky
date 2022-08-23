@@ -1,0 +1,253 @@
+@import "../../assets/style/vars";
+
+.howToBuy {
+	&__title {
+		width: calc(100% - 29px);
+		margin-bottom: 1.52vw;
+		color: $text;
+
+		@media (max-width: $sm) {
+			margin-bottom: 29px;
+		}
+	}
+
+	&__content {
+		margin-bottom: 2.1vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 40px;
+		}
+
+		p {
+			margin-bottom: 1.05vw;
+			font: inherit;
+			color: $text;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			@media (max-width: $sm) {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	&__list {
+		margin-bottom: 1.05vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__bContent {
+		margin-bottom: 1.26vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__tglPopup {
+		display: inline-block;
+		margin-bottom: 2.1vw;
+		padding: 0;
+		font-family: "NAMU", sans-serif;
+		font-weight: 600;
+		font-size: 1.26vw;
+		line-height: 1.52vw;
+		letter-spacing: 0.005em;
+		border: none;
+		background-color: transparent;
+		text-decoration: underline;
+		color: $red;
+
+		@media (max-width: $sm) {
+			margin-bottom: 40px;
+			font-size: 24px;
+			line-height: 29px;
+		}
+	}
+}
+
+.title {
+	font-family: "NAMU", sans-serif;
+	font-size: 1.57vw;
+	line-height: 1.89vw;
+	font-weight: 600;
+	letter-spacing: 0.005em;
+
+	@media (max-width: $sm) {
+		margin-bottom: 29px;
+		font-size: 30px;
+		line-height: 36px;
+	}
+}
+
+.banks {
+	&__title {
+		margin-bottom: 1.26vw;
+		color: $gray;
+
+		@media (max-width: $sm) {
+			margin-bottom: 24px;
+		}
+	}
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+
+	@media (max-width: $xs) {
+		display: block;
+	}
+
+	&__item {
+		margin: 0.21vw 0.84vw 0.21vw 0;
+		@media (max-width: $sm) {
+			margin: 4px 16px 4px 0;
+		}
+
+		@media (max-width: $xs) {
+			margin: 0 0 8px 0;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+
+.banksList {
+	padding: 0;
+	list-style: none;
+
+	&__item {
+		margin-bottom: 0.84vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 16px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.banksItem {
+	display: block;
+	padding: 1.26vw;
+	background-color: #fafafa;
+
+	@media (max-width: $sm) {
+		padding: 24px;
+	}
+
+	&__prev {
+		display: inline-block;
+		width: 12.43vw;
+		margin-bottom: 1.26vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 24px;
+			width: 237px;
+		}
+
+		img {
+			display: inline-block;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.infoList {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1.31vw 0 0;
+	list-style: none;
+	border-top: 1px solid $gray;
+
+	@media (max-width: $sm) {
+		padding-top: 25px;
+	}
+
+	&__item {
+		display: block;
+		min-width: 6.5vw;
+		margin-right: 2.83vw;
+
+		@media (max-width: $sm) {
+			min-width: 124px;
+			margin-right: 54px;
+		}
+
+		@media (max-width: $xs) {
+			min-width: 100px;
+			margin-right: 49px;
+			margin-bottom: 29px;
+		}
+
+		&:nth-child(2) {
+			margin-right: 3.83vw;
+
+			@media (max-width: $sm) {
+				margin-right: 73px;
+			}
+
+			@media (max-width: $xs) {
+				margin-right: 0;
+			}
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+
+		p {
+			&:first-child {
+				margin-bottom: 0.42vw;
+				font-family: "NAMU", sans-serif;
+				font-size: 1.68vw;
+				line-height: 2.25vw;
+				font-weight: 600;
+				letter-spacing: -0.02em;
+				color: $text;
+
+				@media (max-width: $sm) {
+					margin-bottom: 8px;
+					font-size: 32px;
+					line-height: 43px;
+				}
+
+				@media (max-width: $xs) {
+					font-size: 24px;
+					line-height: 28px;
+				}
+			}
+
+			&:last-child {
+				font-family: "IBM", sans-serif;
+				font-size: 0.94vw;
+				line-height: 1.26vw;
+				font-weight: 400;
+				color: rgba($text, 0.5);
+
+				@media (max-width: $sm) {
+					font-size: 18px;
+					line-height: 24px;
+				}
+
+				@media (max-width: $xs) {
+					font-size: 14px;
+					line-height: 21px;
+				}
+			}
+		}
+	}
+}

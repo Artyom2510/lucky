@@ -1,0 +1,142 @@
+@import "../../assets/style/vars";
+
+.panorama {
+	$p: &;
+	&__title {
+		margin-bottom: 2.1vw;
+		padding: 0 3.8vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 24px;
+			padding: 0 24px;
+		}
+
+		@media (max-width: $xs) {
+			padding: 0 12px;
+		}
+
+		p {
+			font-family: "NAMU", sans-serif;
+			font-size: 8.81vw;
+			line-height: 8.91vw;
+			letter-spacing: -0.007em;
+			text-transform: uppercase;
+			color: rgba($gray, 0.4);
+
+			@media (max-width: $sm) {
+				font-size: 68px;
+				line-height: 72px;
+			}
+
+			@media (max-width: $xs) {
+				font-size: 50px;
+				line-height: 53px;
+			}
+		}
+	}
+
+	&__wrap {
+		position: relative;
+		width: 100%;
+		@include aspect-ratio(1920, 788);
+		overflow: hidden;
+
+		@media (max-width: $sm) {
+			@include aspect-ratio(744, 360);
+		}
+
+		@media (max-width: $xs) {
+			@include aspect-ratio(360, 460);
+		}
+
+		iframe,
+		> img {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			outline: none !important;
+			border: none;
+		}
+
+		&_tablet {
+			#{$p}__btnWrap {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
+
+	&__btnWrap {
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		will-change: transform;
+
+		@media (max-width: $md) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	&__exit {
+		position: absolute;
+		z-index: 3;
+		top: 48px;
+		right: 48px;
+
+		@media (max-width: $xs) {
+			top: 12px;
+			right: 12px;
+		}
+	}
+}
+
+.btnWrap {
+	$p: &;
+
+	&__btn {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+
+		@media (max-width: $md) {
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	&:hover {
+		#{$p}__btn {
+			button {
+				visibility: visible;
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+
+	&_tablet {
+		#{$p}__btn {
+			position: relative;
+			z-index: 2;
+
+			button {
+				visibility: visible;
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+}

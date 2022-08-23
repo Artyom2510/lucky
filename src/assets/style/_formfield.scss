@@ -1,0 +1,216 @@
+@import "./vars";
+
+.formfield {
+	$p: &;
+	display: block;
+	position: relative;
+	width: 100%;
+
+	&__input {
+		display: block;
+		width: 100%;
+		padding: 0 0 10px;
+		font-family: "NAMU", sans-serif;
+		font-size: 1.57vw;
+		line-height: 1.89vw;
+		font-weight: 600;
+		letter-spacing: 0.005em;
+		border: none;
+		border-bottom: 1px solid $text;
+		outline: none !important;
+		background-color: transparent;
+		color: $text;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+		@media (max-width: $sm) {
+			font-size: 20px;
+			line-height: 24px;
+		}
+
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover,
+		&:-webkit-autofill:focus {
+			font: inherit !important;
+			caret-color: $text !important;
+			background-color: $white !important;
+			color: $text !important;
+			-webkit-text-fill-color: $text;
+			box-shadow: 0 0 0 39px inset $white !important;
+
+			@media (max-width: $sm) {
+				box-shadow: 0 0 0 31px inset $white !important;
+			}
+		}
+
+		&::placeholder {
+			color: rgba($text, 0.6);
+		}
+
+		&:disabled {
+			opacity: 0.5;
+		}
+
+		&_phone {
+			font-size: 1.68vw;
+			line-height: 2.25vw;
+			border-bottom: none;
+			letter-spacing: 8px;
+
+			@media (max-width: $sm) {
+				font-size: 24px;
+				line-height: 28px;
+			}
+
+			@media (max-width: $xs) {
+				letter-spacing: 5px;
+			}
+
+			&:-webkit-autofill,
+			&:-webkit-autofill:hover,
+			&:-webkit-autofill:focus {
+				box-shadow: 0 0 0 41px inset $white !important;
+
+				@media (max-width: $sm) {
+					box-shadow: 0 0 0 38px inset $white !important;
+				}
+			}
+		}
+	}
+
+	&__checkbox {
+		display: none;
+
+		&:checked + #{$p}__checkbox-label {
+			&::after {
+				background-color: $red;
+			}
+		}
+	}
+
+	&__checkbox-label {
+		position: relative;
+		padding-left: 33px;
+		font-family: "IBM", sans-serif;
+		font-size: 14px;
+		line-height: 17px;
+		font-weight: 400;
+		color: #a5a5a5;
+
+		@media (max-width: $xs) {
+			font-size: 12px;
+			line-height: 16px;
+		}
+
+		&:hover {
+			&::before {
+				background-color: $gray;
+			}
+		}
+
+		a {
+			font: inherit;
+			color: $red2;
+			text-decoration: underline;
+
+			&:focus,
+			&:active,
+			&:hover {
+				color: $red2;
+				text-decoration: underline;
+			}
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			display: block;
+			transition: background-color 0.2s ease;
+
+			@media (max-width: $xs) {
+				transform: translateY(0);
+			}
+		}
+
+		&::before {
+			left: 0;
+			width: 28px;
+			height: 28px;
+			background-color: #ededed;
+
+			@media (max-width: $xs) {
+				top: -6px;
+			}
+		}
+
+		&::after {
+			left: 3px;
+			width: 22px;
+			height: 22px;
+			background-color: transparent;
+
+			@media (max-width: $xs) {
+				top: -3px;
+			}
+		}
+	}
+
+	&__error {
+		display: inline-block;
+		font-family: "IBM", sans-serif;
+		font-size: 14px;
+		line-height: 21px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		color: transparent;
+	}
+
+	&_footer {
+		#{$p}__input {
+			color: $white;
+			border-color: $white;
+
+			&:-webkit-autofill,
+			&:-webkit-autofill:hover,
+			&:-webkit-autofill:focus {
+				box-shadow: 0 0 0 39px inset $blue !important;
+				caret-color: $white !important;
+				background-color: transparent !important;
+				color: $white !important;
+				-webkit-text-fill-color: $white;
+
+				@media (max-width: $sm) {
+					box-shadow: 0 0 0 31px inset $blue !important;
+				}
+			}
+
+			&::placeholder {
+				color: rgba($white, 0.4);
+			}
+
+			&_phone {
+				&:-webkit-autofill,
+				&:-webkit-autofill:hover,
+				&:-webkit-autofill:focus {
+					box-shadow: 0 0 0 41px inset $blue !important;
+
+					@media (max-width: $sm) {
+						box-shadow: 0 0 0 38px inset $blue !important;
+					}
+				}
+			}
+		}
+	}
+
+	&_error {
+		#{$p}__input {
+			color: $red;
+		}
+
+		#{$p}__error {
+			color: rgba($red, 0.9);
+		}
+	}
+}

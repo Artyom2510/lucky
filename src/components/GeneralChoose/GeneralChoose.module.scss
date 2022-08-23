@@ -1,0 +1,171 @@
+@import "../../assets/style/vars";
+
+.choose {
+	padding: 7.13vw 0;
+
+	@media (max-width: $sm) {
+		padding: 64px 0;
+	}
+
+	@media (max-width: $xs) {
+		padding-bottom: 100px;
+	}
+
+	&__title {
+		margin-bottom: 1.68vw;
+		padding: 0 4.2vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 32px;
+			padding: 0 24px;
+		}
+
+		@media (max-width: $xs) {
+			padding: 0 12px;
+		}
+	}
+
+	&__building {
+		position: relative;
+		margin-bottom: 2.41vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.filters {
+	padding: 0 4.2vw;
+
+	@media (max-width: $sm) {
+		padding: 0 24px;
+	}
+
+	@media (max-width: $xs) {
+		padding: 0 12px;
+	}
+
+	&__filter {
+		margin-bottom: 1.47vw;
+
+		@media (max-width: $sm) {
+			margin-bottom: 32px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.filter {
+	&__desc {
+		margin-bottom: 0.21vw;
+		color: $gray;
+
+		@media (max-width: $sm) {
+			margin-bottom: 14px;
+		}
+	}
+
+	&__scWrap {
+		@media (max-width: $sm) {
+			width: 100vw;
+			margin: 0 -24px;
+		}
+
+		@media (max-width: $xs) {
+			margin: 0 -12px;
+		}
+	}
+}
+
+.tabs {
+	$p: &;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	list-style: none;
+	padding: 0;
+
+	@media (max-width: $sm) {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		padding: 0 24px;
+
+		&::-webkit-scrollbar {
+			display: none;
+			width: 0;
+			height: 0;
+		}
+	}
+
+	@media (max-width: $xs) {
+		padding: 0 12px;
+	}
+
+	&__tab {
+		flex-shrink: 0;
+		margin: 0.21vw 0.84vw 0.21vw 0;
+
+		@media (max-width: $sm) {
+			margin: 0 16px 0 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&_disabled {
+			pointer-events: none;
+			opacity: 0.3;
+
+			@media (max-width: $xs) {
+				display: none;
+				margin: 0;
+			}
+		}
+	}
+}
+
+.filterBtn {
+	display: block;
+	padding: 0.84vw 1.57vw;
+	font-family: "NAMU", sans-serif;
+	font-size: 1.36vw;
+	line-height: 1.84vw;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	border-radius: 50px;
+	border: none;
+	color: $red;
+	background-color: rgba(236, 106, 85, 0.1);
+	transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+
+	@media (max-width: $sm) {
+		padding: 16px 30px;
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	@media (max-width: $xs) {
+		font-size: 16px;
+		line-height: 21px;
+	}
+
+	&:hover {
+		@media (min-width: $md) {
+			background: rgba(236, 106, 85, 0.3);
+		}
+	}
+
+	&_active {
+		color: $white;
+		background-color: $red;
+
+		&:hover {
+			background-color: $red;
+		}
+	}
+}

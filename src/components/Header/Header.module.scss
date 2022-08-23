@@ -1,0 +1,182 @@
+@import "../../assets/style/vars";
+
+.header {
+	$p: &;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	width: calc(100% - var(--scroll-width));
+	height: 4.8vw;
+	padding: 1.5vw 5vw;
+	background: rgba(143, 143, 143, 0.5);
+	backdrop-filter: blur(10px);
+	transition: transform 0.3s ease-out;
+
+	@media (max-width: $sm) {
+		height: 48px;
+		padding: 0 12px;
+	}
+
+	@media (max-width: $xs) {
+		justify-content: space-between;
+	}
+
+	&__logo {
+		transform: scaleX(0);
+		display: block;
+		width: 0;
+		height: auto;
+		transition: all 0.3s ease-out;
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+		margin-right: 13.4%;
+		transition: margin 0.3s ease-out;
+
+		&_second {
+			margin-right: 0;
+		}
+
+		&:last-child {
+			margin-right: 0 !important;
+			margin-left: auto;
+		}
+	}
+
+	&__link {
+		margin-right: 2.34vw;
+
+		&_middle {
+			margin-right: 2.4vw;
+		}
+	}
+
+	&__phone {
+		@media (max-width: $sm) {
+			margin-right: 32px;
+		}
+	}
+
+	&__burger {
+		@media (max-width: $sm) {
+			margin-left: auto;
+		}
+	}
+
+	&_sticky {
+		align-items: baseline;
+
+		@media (max-width: $sm) {
+			align-items: center;
+		}
+
+		#{$p}__logo {
+			transform: scaleX(1);
+			width: 9.66vw;
+			margin-right: 1.8%;
+		}
+
+		#{$p}__links {
+			margin-right: 5.8%;
+
+			&_second {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&_transform {
+		transform: translateY(-100%);
+	}
+}
+
+.headerLink {
+	position: relative;
+	display: inline-block;
+	padding: 0 0 1px;
+	border: none;
+	font-family: "IBM", sans-serif;
+	font-size: 1.33vw;
+	line-height: 1.6vw;
+	font-weight: 400;
+	background-color: transparent;
+	color: rgba($white, 0.9);
+	text-decoration: none;
+	transition: color 0.2s ease;
+
+	@media (max-width: $sm) {
+		font-size: 16px;
+		line-height: 21px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: inline-block;
+		width: 100%;
+		height: 1px;
+		transform: scaleX(0);
+		transform-origin: left;
+		background-color: $white;
+		transition: transform 0.2s ease;
+	}
+
+	&:focus,
+	&:hover,
+	&:active {
+		text-decoration: none;
+		color: $white;
+	}
+
+	&:hover {
+		&::after {
+			transform: scaleX(1);
+		}
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	span {
+		margin-right: 0.58vw;
+
+		font: inherit;
+		pointer-events: none;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	img {
+		width: 1.2vw;
+		height: auto;
+		margin-right: 0.6vw;
+	}
+
+	&_choose {
+		&::before {
+			content: attr(data-houses);
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translate(calc(100% + 0.8vw), -50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 2.13vw;
+			height: 2.13vw;
+			font: inherit;
+			border-radius: 50%;
+			border: 1px solid $white;
+		}
+	}
+}

@@ -1,0 +1,50 @@
+@import "../../assets/style/vars";
+
+.goToTop {
+	position: fixed;
+	z-index: 10;
+	bottom: 2.62vw;
+	left: 4.2vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 4.2vw;
+	height: 4.2vw;
+	padding: 0;
+	background-color: rgba(#9b9b9b, 0.4);
+	backdrop-filter: blur(74.1356px);
+	border: none;
+	visibility: hidden;
+	border-radius: 50%;
+	overflow: hidden;
+	opacity: 1;
+	transition: opacity 0.2s ease;
+
+	@media (max-width: $sm) {
+		bottom: 50px;
+		left: 24px;
+		width: 60px;
+		height: 60px;
+	}
+
+	@media (max-width: $xs) {
+		left: 12px;
+		width: 40px;
+		height: 40px;
+	}
+
+	img {
+		display: block;
+		width: 0.68vw;
+		height: auto;
+
+		@media (max-width: $xs) {
+			width: 7px;
+		}
+	}
+
+	&_visible {
+		visibility: visible;
+		opacity: 1;
+	}
+}

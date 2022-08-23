@@ -1,0 +1,66 @@
+@import "../../assets/style/vars";
+
+.contentSect {
+	padding: 6.71vw 4.2vw 7.08vw;
+	overflow: hidden;
+
+	@media (max-width: $sm) {
+		padding: 64px 67px;
+	}
+
+	@media (max-width: $xs) {
+		padding-right: 12px;
+		padding-left: 12px;
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__decor {
+		position: absolute;
+		z-index: 0;
+		display: block;
+		height: auto;
+
+		&_1 {
+			top: 4.4vw;
+			left: 1.52vw;
+			width: 8.29vw;
+
+			@media (max-width: $sm) {
+				top: 64px;
+				left: 0;
+				width: 64px;
+			}
+
+			@media (max-width: $xs) {
+				top: 50%;
+				transform: translateY(-50%);
+				left: -9px;
+			}
+		}
+
+		&_2 {
+			top: 0;
+			right: 4.2vw;
+			width: 8.29vw;
+		}
+
+		&_3 {
+			right: 209px;
+			bottom: 5.24vw;
+			width: 6.35vw;
+
+			@media (max-width: $sm) {
+				right: -10px;
+				bottom: 0;
+				width: 43px;
+			}
+
+			@media (max-width: $xs) {
+				bottom: 44px;
+			}
+		}
+	}
+}

@@ -1,0 +1,52 @@
+.b-content {
+	*:last-child {
+		margin-bottom: 0;
+	}
+
+	p {
+		margin-bottom: 1.26vw;
+		font-family: "NAMU", sans-serif;
+		font-size: 1.57vw;
+		line-height: 1.89vw;
+		font-weight: 600;
+		letter-spacing: 0.005em;
+		color: $text;
+
+		@media (max-width: $sm) {
+			margin-bottom: 24px;
+			font-size: 30px;
+			line-height: 36px;
+		}
+
+		+ p {
+			margin-bottom: 1.84vw;
+			font-family: "IBM", sans-serif;
+			font-size: 1.05vw;
+			line-height: 1.57vw;
+			font-weight: 400;
+			letter-spacing: 0.01em;
+
+			@media (max-width: $sm) {
+				margin-bottom: 35px;
+				font-size: 20px;
+				line-height: 30px;
+			}
+		}
+
+		a {
+			margin-bottom: 1.26vw;
+			font-family: "NAMU", sans-serif;
+			font-weight: 600;
+			font-size: 1.05vw;
+			line-height: 1.57vw;
+			letter-spacing: 0.01em;
+			color: $text;
+
+			@media (max-width: $sm) {
+				margin-bottom: 24px;
+				font-size: 20px;
+				line-height: 30px;
+			}
+		}
+	}
+}

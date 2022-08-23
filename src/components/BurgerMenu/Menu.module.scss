@@ -1,0 +1,215 @@
+@import "../../assets/style/vars";
+
+.menu {
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: calc(var(--vh, 1vh) * 100);
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: $white;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+
+	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 48px;
+		padding: 0 12px;
+	}
+
+	&__logo {
+		display: inline-block;
+		width: 116px;
+		height: auto;
+	}
+
+	&__largeBtns {
+		margin: auto 0 64px;
+		padding: 0 12px;
+
+		@media (max-width: $xs) {
+			margin-bottom: calc(var(--vh, 1vh) * 4.85);
+		}
+
+		@media (max-width: $xs) and (orientation: landscape) {
+			br {
+				display: none;
+			}
+		}
+	}
+
+	&__largeBtn {
+		display: block;
+		margin-bottom: 28px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		text-transform: uppercase;
+		color: $text;
+		text-align: left;
+
+		@media (max-width: $xs) {
+			margin-bottom: calc(var(--vh, 1vh) * 3.64);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&_choose {
+			position: relative;
+			padding-right: 48px;
+
+			@media (max-width: $xs) {
+				padding-right: 12px;
+			}
+
+			&::after {
+				content: attr(data-houses);
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				display: block;
+				width: 31px;
+				height: 31px;
+				font-family: "IBM", sans-serif;
+				font-size: 15px;
+				line-height: 31px;
+				font-weight: 400;
+				color: rgba($gray, 0.9);
+				border-radius: 50%;
+				border: 1px solid $gray;
+				text-align: center;
+
+				@media (max-width: $xs) and (orientation: portrait) {
+					top: 7px;
+					transform: translateY(0%);
+				}
+
+				@media (max-width: $xs) and (orientation: landscape) {
+					transform: translate(100%, -50%);
+				}
+			}
+		}
+	}
+
+	&__navBtns {
+		margin-bottom: 24px;
+	}
+
+	&__connect {
+		display: flex;
+		justify-content: space-between;
+		padding: 24px 12px;
+		border-top: 1px solid $gray;
+
+		@media (max-width: $xs) {
+			padding: calc(var(--vh, 1vh) * 3.64) 12px;
+		}
+	}
+
+	&__decor {
+		position: absolute;
+		z-index: 0;
+		display: block;
+		height: auto;
+		pointer-events: none;
+
+		&_1 {
+			top: 69px;
+			left: 12px;
+			width: 94px;
+		}
+
+		&_2 {
+			top: 269px;
+			right: -51px;
+			width: 103px;
+
+			@media (max-width: $xs) {
+				top: 199px;
+			}
+		}
+	}
+
+	&_visible {
+		opacity: 1;
+	}
+}
+
+.navBtns {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 12px;
+
+	@media (max-width: $xs) {
+		flex-wrap: wrap;
+		padding-right: 68px;
+	}
+
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		text-decoration: none;
+
+		@media (max-width: $xs) and (orientation: portrait) {
+			margin-bottom: 29px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&:focus,
+		&:hover,
+		&:active {
+			text-decoration: none;
+		}
+
+		img {
+			display: inline-block;
+			width: 16px;
+			height: auto;
+			margin-right: 8px;
+		}
+
+		span {
+			font-family: "IBM", sans-serif;
+			font-size: 16px;
+			line-height: 21px;
+			font-weight: 400;
+			color: rgba($text, 0.9);
+		}
+	}
+}
+
+.menuLink {
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	border: none;
+	font-family: "IBM", sans-serif;
+	font-size: 16px;
+	line-height: 21px;
+	font-weight: 400;
+	background-color: transparent;
+	color: rgba($text, 0.9);
+	text-decoration: none;
+
+	&:focus,
+	&:hover,
+	&:active {
+		text-decoration: none;
+	}
+}

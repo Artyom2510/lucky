@@ -1,0 +1,61 @@
+@import "../../assets/style/vars";
+
+.footerFeedback {
+	&__formfield {
+		margin-bottom: 0.79vw;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__desc {
+		margin-bottom: 1.05vw;
+		font-family: "IBM", sans-serif;
+		font-size: 0.73vw;
+		line-height: 1.1vw;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		color: rgba($white, 0.5);
+
+		a {
+			text-decoration: underline;
+			color: inherit;
+			font: inherit;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: $white;
+			}
+		}
+
+		@media (max-width: $sm) {
+			margin-bottom: 24px;
+			font-size: 12px;
+			line-height: 18px;
+		}
+	}
+
+	&__submit {
+		display: inline-block;
+		padding: 0;
+		font-family: "NAMU", sans-serif;
+		font-size: 1.57vw;
+		line-height: 1.89vw;
+		font-weight: 600;
+		letter-spacing: 0.005em;
+		border: none;
+		background-color: transparent;
+		color: $white;
+		transition: color 0.2s ease;
+
+		@media (max-width: $sm) {
+			font-size: 20px;
+			line-height: 24px;
+		}
+
+		&_disabled {
+			color: rgba($white, 0.3);
+		}
+	}
+}

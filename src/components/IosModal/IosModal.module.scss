@@ -1,0 +1,25 @@
+@import "../../assets/style/vars";
+
+.iosPopup {
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: calc(var(--vh, 1vh) * 100);
+	background-color: #000;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+
+	iframe {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+
+	&_visible {
+		opacity: 1;
+	}
+}
